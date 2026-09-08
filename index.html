@@ -416,6 +416,21 @@
     line-height: 1.7;
   }
 
+  .tool-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .tool-list p {
+    margin: 0;
+  }
+
+  .tool-list strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
   /* ---------- Contact ---------- */
 
   .contact-list {
@@ -727,7 +742,14 @@
         </div>
         <div class="credential-block">
           <h4>Tools</h4>
-          <p>Claude Code, Supabase, Vercel, and GitHub for rapid prototyping. Claude, ChatGPT, Cursor, and ChatPRD for strategy and research. Google Stitch, Uizard, and Lovable for design prototyping. Gamma for presentations. Jira, Notion, and Asana for roadmapping. MoEngage and Databricks for analytics.</p>
+          <div class="tool-list">
+            <p><strong>Rapid prototyping</strong> — Claude Code, Supabase, Vercel, GitHub</p>
+            <p><strong>Strategy &amp; research</strong> — Claude, ChatGPT, Cursor, ChatPRD</p>
+            <p><strong>Design prototyping</strong> — Google Stitch, Uizard, Lovable</p>
+            <p><strong>Presentations</strong> — Gamma</p>
+            <p><strong>Roadmapping</strong> — Jira, Notion, Asana</p>
+            <p><strong>Analytics</strong> — MoEngage, Databricks</p>
+          </div>
         </div>
       </div>
     </section>
