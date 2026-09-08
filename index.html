@@ -10,6 +10,23 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  :root {
+    --content-w: 720px;
+    --nav-w: 760px;
+  }
+
+  @media (min-width: 900px) {
+    :root { --content-w: 820px; --nav-w: 860px; }
+  }
+
+  @media (min-width: 1200px) {
+    :root { --content-w: 960px; --nav-w: 1000px; }
+  }
+
+  @media (min-width: 1600px) {
+    :root { --content-w: 1080px; --nav-w: 1120px; }
+  }
+
   html {
     background-color: #17181A !important;
     scroll-behavior: smooth;
@@ -37,7 +54,7 @@
   a { text-decoration: none; }
 
   .wrap {
-    max-width: 720px;
+    max-width: var(--content-w);
     margin: 0 auto;
     padding: 0 24px;
   }
@@ -56,7 +73,7 @@
     align-items: center;
     justify-content: space-between;
     height: 58px;
-    max-width: 760px;
+    max-width: var(--nav-w);
   }
   .nav-name { font-size: 14px; font-weight: 500; }
   .nav-links { display: flex; gap: 26px; font-size: 13px; color: #8C8D8A !important; }
@@ -245,6 +262,25 @@
   a.contact-value:hover { color: #5B8DEF !important; }
 
   footer { padding: 36px 0 64px; font-size: 12.5px; color: #6B6C69 !important; }
+
+  /* ---------- Laptop / desktop — use the extra width instead of just wider margins ---------- */
+  @media (min-width: 900px) {
+    .hero h1 { font-size: clamp(48px, 6vw, 76px); max-width: 15ch; }
+    .hero-sub { font-size: 19px; max-width: 48ch; }
+    .stat-grid { grid-template-columns: repeat(3, 1fr); gap: 36px 32px; }
+    .sector-grid { grid-template-columns: repeat(4, 1fr); gap: 28px 24px; }
+  }
+
+  @media (min-width: 1200px) {
+    .hero h1 { font-size: clamp(56px, 5.5vw, 84px); }
+    body { font-size: 17px; }
+  }
+
+  /* ---------- Tablet ---------- */
+  @media (min-width: 641px) and (max-width: 899px) {
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .sector-grid { grid-template-columns: repeat(2, 1fr); }
+  }
 </style>
 </head>
 <body>
