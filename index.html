@@ -303,8 +303,8 @@
     top: -14vw;
     left: -10vw;
     background: #5B8DEF;
-    opacity: 0.16;
-    animation: driftOne 34s ease-in-out infinite alternate;
+    opacity: 0.2;
+    animation: driftOne 16s ease-in-out infinite alternate;
   }
 
   .bg-ambient .blob-2 {
@@ -313,8 +313,8 @@
     top: 30vh;
     right: -14vw;
     background: #E8A33D;
-    opacity: 0.11;
-    animation: driftTwo 40s ease-in-out infinite alternate;
+    opacity: 0.15;
+    animation: driftTwo 20s ease-in-out infinite alternate;
   }
 
   .bg-ambient .blob-3 {
@@ -323,23 +323,23 @@
     bottom: -12vw;
     left: 20vw;
     background: #5B8DEF;
-    opacity: 0.08;
-    animation: driftThree 46s ease-in-out infinite alternate;
+    opacity: 0.12;
+    animation: driftThree 24s ease-in-out infinite alternate;
   }
 
   @keyframes driftOne {
     from { transform: translate(0, 0) scale(1); }
-    to   { transform: translate(6vw, 5vh) scale(1.12); }
+    to   { transform: translate(16vw, 12vh) scale(1.25); }
   }
 
   @keyframes driftTwo {
     from { transform: translate(0, 0) scale(1); }
-    to   { transform: translate(-5vw, -6vh) scale(1.08); }
+    to   { transform: translate(-14vw, -14vh) scale(1.2); }
   }
 
   @keyframes driftThree {
     from { transform: translate(0, 0) scale(1); }
-    to   { transform: translate(4vw, -4vh) scale(1.15); }
+    to   { transform: translate(12vw, -12vh) scale(1.3); }
   }
 
   @media (prefers-reduced-motion: reduce) {
