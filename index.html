@@ -119,7 +119,7 @@
 
   .content {
     flex: 1;
-    padding: 40px 64px;
+    padding: 32px 64px;
     max-width: 900px;
     display: flex;
     flex-direction: column;
@@ -144,16 +144,16 @@
   /* ---------- Home ---------- */
 
   .hero h2 {
-    font-size: 2.3rem;
-    max-width: 15ch;
-    margin-bottom: 18px;
+    font-size: 1.85rem;
+    max-width: 20ch;
+    margin-bottom: 12px;
   }
 
   .hero-lede {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--ink);
     max-width: 58ch;
-    margin-bottom: 28px;
+    margin-bottom: 20px;
   }
 
   .stat-strip {
@@ -162,12 +162,12 @@
     gap: 1px;
     background: var(--stone);
     border: 1px solid var(--stone);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
   .stat {
     background: var(--paper);
-    padding: 18px 16px;
+    padding: 14px 16px;
   }
 
   .stat-number {
@@ -187,6 +187,7 @@
     display: flex;
     gap: 16px;
     align-items: center;
+    margin-top: 20px;
   }
 
   .btn-primary {
@@ -220,15 +221,15 @@
   }
 
   .sector-map {
-    margin-top: 24px;
-    padding-top: 20px;
+    margin-top: 0;
+    padding-top: 16px;
     border-top: 1px solid var(--stone);
   }
 
   .sector-map-label {
     font-size: 0.78rem;
     color: var(--grey);
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
 
   .sector-groups {
@@ -397,16 +398,6 @@
     color: var(--ink);
   }
 
-  .career-lesson {
-    margin-top: 10px;
-    padding-left: 14px;
-    border-left: 2px solid var(--bronze);
-    font-family: 'Source Serif 4', serif;
-    font-style: italic;
-    font-size: 0.92rem;
-    color: var(--pine);
-  }
-
   .credentials {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -526,7 +517,7 @@
       <button class="nav-item" data-panel="career">Career</button>
       <button class="nav-item" data-panel="contact">Contact</button>
     </div>
-    <div class="sidebar-footer">Mumbai, India</div>
+    <div class="sidebar-footer">Global / Remote / Hybrid</div>
   </nav>
 
   <main class="content">
@@ -556,11 +547,6 @@
           </div>
         </div>
 
-        <div class="home-cta">
-          <button class="btn-primary" onclick="showPanel('how-i-can-help')">See how I can help</button>
-          <button class="btn-secondary" onclick="showPanel('contact')">Get in touch</button>
-        </div>
-
         <div class="sector-map">
           <div class="sector-map-label">Sectors I've worked across</div>
           <div class="sector-groups">
@@ -581,6 +567,11 @@
               <p>Edtech, generative AI model evaluation, AI product prototyping</p>
             </div>
           </div>
+        </div>
+
+        <div class="home-cta">
+          <button class="btn-primary" onclick="showPanel('how-i-can-help')">See how I can help</button>
+          <button class="btn-secondary" onclick="showPanel('contact')">Get in touch</button>
         </div>
       </div>
     </section>
@@ -672,19 +663,28 @@
     <section class="panel" id="career">
       <div class="section-head">
         <div class="eyebrow">Career</div>
-        <h2>Fourteen years, and each one built on the last.</h2>
-        <p class="section-intro">A bank, a solo consultancy, an early-stage consumer brand, a regulated fintech scale-up. Each stage handed me something the next one needed. Here's the arc, and what stuck from each stop.</p>
+        <h2>Fourteen years, four kinds of company.</h2>
+        <p class="section-intro">A regulated fintech scale-up, an early-stage consumer brand, a solo consultancy across six countries, and a global bank. Here's where each one sits.</p>
       </div>
 
       <div class="career-list">
+        <div class="career-entry">
+          <div class="career-meta">
+            <span class="role">Independent Product Consultant (Fractional)</span>
+            2026 to present
+          </div>
+          <div class="career-body">
+            <p>Advising founders from pre-seed to Series B on product strategy, execution, and AI-driven operations.</p>
+          </div>
+        </div>
+
         <div class="career-entry">
           <div class="career-meta">
             <span class="role">Vice President, Product</span>
             ZebPay<br>2021 to 2026
           </div>
           <div class="career-body">
-            <p>Led product for a regulated crypto exchange as it scaled toward 7 million users. Rebuilt internal product workflows around AI tooling, cutting PRD creation from 15 days to under 2 and design turnaround from 3 weeks to under 2 days. Reported directly to the CEO and presented product strategy to the board and investors. Full growth story under How I Can Help.</p>
-            <p class="career-lesson">What stuck: speed and compliance don't have to fight each other. This is where I learned to move fast inside a regulated business, not around it.</p>
+            <p>Led product strategy for a regulated crypto exchange as it scaled from 3.5M to 7M users, launching new revenue streams, rebuilding internal workflows around AI tooling, and leading and mentoring the product and design teams, reporting directly to the CEO.</p>
           </div>
         </div>
 
@@ -694,8 +694,7 @@
             Kult Beauty<br>2018 to 2021
           </div>
           <div class="career-body">
-            <p>Joined as the first Head of Product at an early stage beauty and e-commerce company. Found a gap in personalisation and trust through customer and competitive research, then built a skin type matching algorithm and a skin tone visualisation engine to close it. The app grew past 500,000 downloads. Built and led the Product, Design, Research, and Data functions from the ground up, working directly with the CEO and the heads of Design, Tech, and Content.</p>
-            <p class="career-lesson">What stuck: how to build a product function with nothing to inherit. Every process, every hire, every call on what to build first was mine to get right or wrong.</p>
+            <p>Joined as the first Head of Product at an early-stage beauty and e-commerce company, building Product, Design, Research, and Data from the ground up — grew the app past 500,000 downloads.</p>
           </div>
         </div>
 
@@ -705,8 +704,7 @@
             Graph++<br>2015 to 2018
           </div>
           <div class="career-body">
-            <p>Ran an independent product consultancy across 20 plus engagements in 6 countries, spanning fintech, healthcare, pharma, media, real estate, and enterprise software. Designed and prototyped an end to end real estate platform for Anarock and BrokerNetwork, covering everything from lead management through to booking closure. It became India's first product of its kind, and the prototype helped the company raise 27 million dollars in investment. Separately conceptualised the full customer journey for a digital lending platform with Aditya Birla Finance, from data collection through disbursal and repayment. The platform disbursed 180 crore rupees, about 20 million dollars, across 70,000 loans in its first six months. In healthcare, delivered a patient management platform automating scheduling, prescriptions, and billing for a multi-branch clinic serving 10,000 plus patients a month, and separately designed a patient engagement platform with PharmaSecure that improved adherence on chronic treatment regimens.</p>
-            <p class="career-lesson">What stuck: strategy dies fast without execution behind it. This is where I stopped just recommending products and started building them myself.</p>
+            <p>Ran an independent product consultancy for three years, taking 20+ founders across six countries from an unclear idea to a plan they could build.</p>
           </div>
         </div>
 
@@ -716,8 +714,7 @@
             J.P. Morgan, London<br>2012 to 2015
           </div>
           <div class="career-body">
-            <p>Designed and automated investment workflows for the foreign exchange process inside a highly regulated bank, improving efficiency while reducing risk. Built an early foundation in systems thinking and complex stakeholder management.</p>
-            <p class="career-lesson">What stuck: how to think in systems, and how to work inside serious regulatory constraint without letting it slow the work down. Everything after was built on this.</p>
+            <p>Designed and automated investment workflows for the foreign exchange process inside a highly regulated global bank.</p>
           </div>
         </div>
       </div>
