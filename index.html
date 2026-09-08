@@ -500,12 +500,70 @@
     .sector-groups { grid-template-columns: 1fr 1fr; gap: 20px; }
   }
 
+  /* ---------- Scroll cue ---------- */
+
+  .scroll-fade {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 90px;
+    background: linear-gradient(to bottom, rgba(250, 250, 248, 0), var(--paper) 75%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    z-index: 15;
+  }
+
+  .scroll-fade.visible { opacity: 1; }
+
+  .scroll-cue {
+    position: fixed;
+    right: 32px;
+    bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 16;
+  }
+
+  .scroll-cue.visible { opacity: 1; pointer-events: auto; }
+
+  .scroll-cue-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    color: var(--grey);
+    letter-spacing: 0.02em;
+  }
+
+  .scroll-cue svg {
+    animation: scrollBounce 1.6s ease-in-out infinite;
+  }
+
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+  }
+
+  @media (max-width: 860px) {
+    .scroll-cue { right: 20px; bottom: 16px; }
+  }
+
   /* ---------- Accessibility ---------- */
 
   .nav-item:focus-visible,
   .btn-primary:focus-visible,
   .btn-secondary:focus-visible,
-  .contact-value:focus-visible {
+  .contact-value:focus-visible,
+  .scroll-cue:focus-visible {
     outline: 2px solid var(--pine);
     outline-offset: 2px;
   }
@@ -513,6 +571,7 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .panel.active { animation: none; }
+    .scroll-cue svg { animation: none; }
   }
 </style>
 </head>
@@ -739,6 +798,8 @@
           <h4>Education</h4>
           <p>MSc, Software Systems Engineering<br>University College London, 2012</p>
           <p style="margin-top: 10px;">BSc, Information Technology<br>St. Xavier's College, Mumbai, 2011</p>
+          <p style="margin-top: 10px;">Indian School Certificate (ISC)<br>Cathedral &amp; John Connon School, 2008</p>
+          <p style="margin-top: 10px;">Indian Certificate of Secondary Education (ICSE)<br>Villa Theresa High School, 2006</p>
         </div>
         <div class="credential-block">
           <h4>Tools</h4>
@@ -781,6 +842,14 @@
   </main>
 </div>
 
+<div class="scroll-fade" aria-hidden="true"></div>
+<button class="scroll-cue" type="button" aria-label="Scroll down for more">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--bronze);">
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg>
+  <span class="scroll-cue-label">More below</span>
+</button>
+
 <script>
   function showPanel(id) {
     document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
@@ -788,11 +857,31 @@
     document.getElementById(id).classList.add('active');
     document.querySelector(`.nav-item[data-panel="${id}"]`).classList.add('active');
     window.scrollTo(0, 0);
+    updateScrollCue();
   }
 
   document.querySelectorAll('.nav-item').forEach(item => {
     item.addEventListener('click', () => showPanel(item.dataset.panel));
   });
+
+  const scrollFade = document.querySelector('.scroll-fade');
+  const scrollCue = document.querySelector('.scroll-cue');
+
+  function updateScrollCue() {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const nearBottom = window.scrollY >= scrollable - 24;
+    const show = scrollable > 40 && !nearBottom;
+    scrollFade.classList.toggle('visible', show);
+    scrollCue.classList.toggle('visible', show);
+  }
+
+  scrollCue.addEventListener('click', () => {
+    window.scrollBy({ top: window.innerHeight * 0.7, behavior: 'smooth' });
+  });
+
+  window.addEventListener('scroll', updateScrollCue, { passive: true });
+  window.addEventListener('resize', updateScrollCue);
+  updateScrollCue();
 </script>
 
 </body>
