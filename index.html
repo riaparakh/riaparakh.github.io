@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark only">
-<title>Ria Parakh — Product Strategy</title>
+<title>Ria Parakh: Product Strategy</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap');
 
@@ -225,6 +225,35 @@
   .stack-line b { color: #B4B5B1 !important; font-weight: 500; }
   .stack-line-label { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.05em; color: #E8A33D !important; margin-bottom: 8px; }
 
+  /* ---------- How It Works — phases + objection block ---------- */
+  .phases { margin-top: 40px; display: grid; gap: 0; }
+  .phase {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 24px;
+    padding: 28px 0;
+    border-top: 0.5px solid rgba(255,255,255,0.08);
+  }
+  .phase:first-child { border-top: none; }
+  .phase-mark {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 18px;
+    color: #5B8DEF !important;
+  }
+  .phase h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 19px; }
+  .phase p { margin-top: 8px; font-size: 14.5px; color: #B4B5B1 !important; max-width: 54ch; }
+  @media (max-width: 560px) { .phase { grid-template-columns: 1fr; gap: 8px; } }
+
+  .objection-block {
+    margin-top: 44px;
+    padding: 30px 28px;
+    background: #1F2123 !important;
+    border-radius: 4px;
+    border-left: 2px solid #E8A33D;
+  }
+  .objection-block h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 19px; }
+  .objection-block p { margin-top: 10px; font-size: 14.5px; color: #B4B5B1 !important; max-width: 58ch; }
+
   /* ---------- Work / case studies ---------- */
   .case-grid { margin-top: 40px; display: grid; gap: 20px; }
   .case-card {
@@ -297,6 +326,7 @@
     <div class="nav-name">Ria Parakh</div>
     <div class="nav-links">
       <a href="#how-i-help">How I can help</a>
+      <a href="#how-it-works">How It Works</a>
       <a href="#work">Case studies</a>
       <a href="#career">Career</a>
       <a href="#contact">Contact</a>
@@ -306,7 +336,7 @@
 
 <header class="hero">
   <div class="wrap">
-    <div class="hero-tag">Fractional CPO — product strategy &amp; AI strategy</div>
+    <div class="hero-tag">Fractional CPO: product strategy &amp; AI strategy</div>
     <h1>Fractional CPO for product strategy and <em>AI strategy</em>.</h1>
     <p class="hero-sub">I work with start-ups and scale-ups on getting to product-market fit, fixing growth that's stalled, and figuring out where AI genuinely belongs in the product and the team. Most engagements end with something built and testable that you can put in front of real users.</p>
     <p class="hero-cred"><b>14+ years</b> across fintech, crypto, consumer, and healthcare · MSc, UCL · J.P. Morgan, London</p>
@@ -358,10 +388,10 @@
         <div class="track-stage">Pre-seed through Series B</div>
         <p class="track-desc">Finding what to build next, and building a plan the team can actually follow.</p>
         <ul class="track-list">
-          <li><b>Product-market fit &amp; customer research</b> — talking to real customers to see if the idea holds up before you spend on building it</li>
-          <li><b>Roadmap &amp; prioritisation</b> — turning a long list of ideas into a sequence the team can execute</li>
-          <li><b>Growth &amp; retention</b> — finding where users drop off and fixing the journey itself, not just the messaging around it</li>
-          <li><b>New revenue streams</b> — pricing and monetisation models built for the business you actually have</li>
+          <li><b>Product-market fit &amp; customer research:</b> talking to real customers to see if the idea holds up before you spend on building it</li>
+          <li><b>Roadmap &amp; prioritisation:</b> turning a long list of ideas into a sequence the team can execute</li>
+          <li><b>Growth &amp; retention:</b> finding where users drop off and fixing the journey itself, not just the messaging around it</li>
+          <li><b>New revenue streams:</b> pricing and monetisation models built for the business you actually have</li>
         </ul>
       </div>
       <div class="track-card ai">
@@ -369,15 +399,52 @@
         <div class="track-stage">Pre-seed through Series B</div>
         <p class="track-desc">Making AI useful inside the actual product and the actual workflow.</p>
         <ul class="track-list">
-          <li><b>Workflow optimisation</b> — rebuilding how a team works with AI day to day (one team went from 15 days to under 2 for PRD writing)</li>
-          <li><b>Rapid prototyping</b> — taking a spec to a deployed, working build myself, so you can test with real users instead of a slide</li>
-          <li><b>AI-driven products</b> — deciding where AI genuinely improves the product experience, and where it's better left out</li>
+          <li><b>Workflow optimisation:</b> rebuilding how a team works with AI day to day (one team went from 15 days to under 2 for PRD writing)</li>
+          <li><b>Rapid prototyping:</b> taking a spec to a deployed, working build myself, so you can test with real users instead of a slide</li>
+          <li><b>AI-driven products:</b> deciding where AI genuinely improves the product experience, and where it's better left out</li>
         </ul>
         <div class="stack-line">
           <div class="stack-line-label">How I build</div>
-          <b>Build:</b> Claude Code, Cursor, Codex, Supabase, GitHub, Vercel &nbsp;·&nbsp; <b>Strategy &amp; research:</b> Claude, ChatGPT, ChatPRD &nbsp;·&nbsp; <b>Prototyping:</b> Google Stitch, Uizard, Lovable &nbsp;·&nbsp; <b>Presentations:</b> Gamma
+          <b>Build:</b> Claude Code, Cursor, Codex, Supabase, GitHub, Vercel &nbsp;·&nbsp; <b>Strategy &amp; research:</b> Claude, ChatGPT, ChatPRD &nbsp;·&nbsp; <b>Design prototyping:</b> Google Stitch, Uizard, Lovable &nbsp;·&nbsp; <b>Presentations:</b> Gamma
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works" class="flow">
+  <div class="wrap">
+    <div class="eyebrow">How It Works</div>
+    <h2>Most engagements run three to six months, in three phases.</h2>
+    <p class="section-lede">The shape stays the same whether the work is finding a first product or fixing a growth problem. What changes is where I spend the time.</p>
+
+    <div class="phases">
+      <div class="phase">
+        <div class="phase-mark">01</div>
+        <div>
+          <h3>Strategy</h3>
+          <p>I get into the actual problem first. Customer research, market research, a clear look at what's working and what isn't. No recommendations before I understand what's really going on.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-mark">02</div>
+        <div>
+          <h3>Build</h3>
+          <p>I either execute the plan myself or bring in a small team to do it, depending on what the work needs. Either way, someone senior stays close to the work the whole time.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-mark">03</div>
+        <div>
+          <h3>Handoff</h3>
+          <p>Before I leave, I help define what the permanent role should look like, if there needs to be one at all. You get through the gap without carrying a full time hire before you know if you need one, and without getting stuck if the engagement doesn't work out.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="objection-block">
+      <h3>If you've been burned by fractional hires before</h3>
+      <p>A lot of fractional engagements fail because the person shows up with a generic playbook and no real involvement in the work. I don't hand you a deck and disappear. I do the research myself, I build the product myself when that's what's needed, and I stay accountable for outcomes, not just recommendations.</p>
     </div>
   </div>
 </section>
@@ -420,7 +487,7 @@
         <dl class="case-dl">
           <dt>Ask</dt><dd>Validate the target market and core product hypothesis for an AI-native learning platform.</dd>
           <dt>Approach</dt><dd>Ran structured customer research and market validation, using a 6-agent AI system built to run interview synthesis with a built-in check against unsupported claims.</dd>
-          <dt>Result</dt><dd class="case-result">Found the target age group and the founder's core hypothesis were both wrong, and redirected the strategy before further engineering spend — avoiding a costly build in the wrong direction.</dd>
+          <dt>Result</dt><dd class="case-result">Found the target age group and the founder's core hypothesis were both wrong, and redirected the strategy before further engineering spend. That avoided a costly build in the wrong direction.</dd>
         </dl>
       </div>
 
@@ -471,35 +538,35 @@
     <div class="role">
       <div class="role-years">2026 – present</div>
       <div>
-        <div class="role-title">Independent Product Consultant <span class="role-org">— Fractional</span></div>
+        <div class="role-title">Independent Product Consultant <span class="role-org">(Fractional)</span></div>
         <p class="role-desc">Advising founders from pre-seed to Series B on product strategy, execution, and AI-driven operations.</p>
       </div>
     </div>
     <div class="role">
       <div class="role-years">2021 – 2026</div>
       <div>
-        <div class="role-title">Vice President, Product <span class="role-org">— ZebPay</span></div>
+        <div class="role-title">Vice President, Product <span class="role-org">at ZebPay</span></div>
         <p class="role-desc">Led product strategy for a regulated crypto exchange as it scaled from 3.5M to 7M users. Launched new revenue streams, rebuilt internal workflows around AI, led product and design.</p>
       </div>
     </div>
     <div class="role">
       <div class="role-years">2018 – 2021</div>
       <div>
-        <div class="role-title">Head of Product <span class="role-org">— Kult Beauty</span></div>
+        <div class="role-title">Head of Product <span class="role-org">at Kult Beauty</span></div>
         <p class="role-desc">First Head of Product at an early-stage beauty and e-commerce company. Built Product, Design, Research, and Data from the ground up. Grew the app past 500,000 downloads.</p>
       </div>
     </div>
     <div class="role">
       <div class="role-years">2015 – 2018</div>
       <div>
-        <div class="role-title">Founder <span class="role-org">— Independent Consulting Practice</span></div>
+        <div class="role-title">Founder <span class="role-org">of Independent Consulting Practice</span></div>
         <p class="role-desc">Independent product consultancy. 20+ engagements, 6 countries, taking founders from unclear idea to a plan they could build.</p>
       </div>
     </div>
     <div class="role">
       <div class="role-years">2012 – 2015</div>
       <div>
-        <div class="role-title">Associate, Investment Management <span class="role-org">— J.P. Morgan, London</span></div>
+        <div class="role-title">Associate, Investment Management <span class="role-org">at J.P. Morgan, London</span></div>
         <p class="role-desc">Designed and automated investment workflows for the foreign exchange process inside a highly regulated global bank.</p>
       </div>
     </div>
@@ -512,12 +579,12 @@
       </div>
       <div>
         <h4>Tools</h4>
-        <li>AI-native build — Claude Code, Supabase, GitHub, Vercel</li>
-        <li>Strategy and research — Claude, ChatGPT, Cursor, ChatPRD</li>
-        <li>Design prototyping — Google Stitch, Uizard, Lovable</li>
-        <li>Presentations — Gamma</li>
-        <li>Roadmapping — Jira, Notion, Asana</li>
-        <li>Analytics — MoEngage, Databricks</li>
+        <li>Build: Claude Code, Supabase, GitHub, Vercel</li>
+        <li>Strategy &amp; research: Claude, ChatGPT, Cursor, ChatPRD</li>
+        <li>Design prototyping: Google Stitch, Uizard, Lovable</li>
+        <li>Presentations: Gamma</li>
+        <li>Roadmapping: Jira, Notion, Asana</li>
+        <li>Analytics: MoEngage, Databricks</li>
       </div>
     </div>
   </div>
@@ -547,7 +614,7 @@
 </section>
 
 <footer>
-  <div class="wrap">Ria Parakh — Product Strategy</div>
+  <div class="wrap">Ria Parakh: Product Strategy</div>
 </footer>
 
 </body>
