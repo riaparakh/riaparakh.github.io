@@ -252,6 +252,13 @@
   }
   .stack-line b { color: #B4B5B1 !important; font-weight: 500; }
   .stack-line-label { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.05em; color: #E8A33D !important; margin-bottom: 8px; }
+  .stack-line-top {
+    margin-top: 28px;
+    padding: 18px 22px;
+    border-top: none;
+    background: #1F2123 !important;
+    border-radius: 4px;
+  }
 
   /* ---------- How It Works — phases + objection block ---------- */
   .phases { margin-top: 40px; display: grid; gap: 0; }
@@ -309,6 +316,7 @@
   @media (max-width: 560px) { .role { grid-template-columns: 1fr; gap: 4px; } }
 
   .subgroup { margin-top: 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .subgroup-single { grid-template-columns: 1fr; max-width: 52ch; }
   .subgroup h4 { font-size: 12.5px; color: #E8A33D !important; margin-bottom: 12px; font-weight: 500; letter-spacing: 0.02em; }
   .subgroup p, .subgroup li { font-size: 13.5px; color: #B4B5B1 !important; list-style: none; line-height: 1.85; }
   @media (max-width: 560px) { .subgroup { grid-template-columns: 1fr; gap: 26px; } }
@@ -414,6 +422,11 @@
     <div class="eyebrow">How I can help</div>
     <h2>Product strategy and AI strategy</h2>
 
+    <div class="stack-line stack-line-top">
+      <div class="stack-line-label">How I build</div>
+      <b>Build:</b> Claude Code, Cursor, Codex, Supabase, GitHub, Vercel &nbsp;·&nbsp; <b>Strategy &amp; research:</b> Claude, ChatGPT, ChatPRD &nbsp;·&nbsp; <b>Design prototyping:</b> Google Stitch, Uizard, Lovable &nbsp;·&nbsp; <b>Presentations:</b> Gamma &nbsp;·&nbsp; <b>Roadmapping:</b> Jira, Notion, Asana &nbsp;·&nbsp; <b>Analytics:</b> MoEngage, Databricks
+    </div>
+
     <div class="track-grid">
       <div class="track-card">
         <h3>Product Strategy</h3>
@@ -435,10 +448,6 @@
           <li><b>Rapid prototyping:</b> turning a spec into a working, deployed build you can test with users</li>
           <li><b>AI-driven products:</b> deciding where AI improves the product, and where to leave it out</li>
         </ul>
-        <div class="stack-line">
-          <div class="stack-line-label">How I build</div>
-          <b>Build:</b> Claude Code, Cursor, Codex, Supabase, GitHub, Vercel &nbsp;·&nbsp; <b>Strategy &amp; research:</b> Claude, ChatGPT, ChatPRD &nbsp;·&nbsp; <b>Design prototyping:</b> Google Stitch, Uizard, Lovable &nbsp;·&nbsp; <b>Presentations:</b> Gamma
-        </div>
       </div>
     </div>
   </div>
@@ -538,7 +547,7 @@
       <div class="case-card">
         <div>
           <div class="case-name">Real estate lead &amp; sales platform</div>
-          <div class="case-meta">Proptech, 0-to-1<br>India · 2018</div>
+          <div class="case-meta">Proptech, 0-to-1<br>India · 2017</div>
         </div>
         <dl class="case-dl">
           <dt>Ask</dt><dd>Build a lead and sales management system for a real estate business losing deals to an untracked, manual sales process.</dd>
@@ -550,7 +559,7 @@
       <div class="case-card">
         <div>
           <div class="case-name">Clinic patient management platform</div>
-          <div class="case-meta">Healthcare, consulting engagement<br>India · 2015–2018</div>
+          <div class="case-meta">Healthcare, consulting engagement<br>India · 2015</div>
         </div>
         <dl class="case-dl">
           <dt>Ask</dt><dd>Automate scheduling, prescriptions, and billing across a multi-branch clinic without disrupting daily patient flow.</dd>
@@ -577,7 +586,7 @@
 <section id="career" class="flow">
   <div class="wrap">
     <div class="eyebrow">Fourteen years</div>
-    <h2>Five roles</h2>
+    <h2>Experience</h2>
 
     <div class="role">
       <div class="role-years">2026 – present</div>
@@ -615,20 +624,11 @@
       </div>
     </div>
 
-    <div class="subgroup">
+    <div class="subgroup subgroup-single">
       <div>
         <h4>Education</h4>
         <p>MSc, Software Systems Engineering<br>University College London, 2012</p>
         <p style="margin-top:10px;">BSc, Information Technology<br>St. Xavier's College, Mumbai, 2011</p>
-      </div>
-      <div>
-        <h4>Tools</h4>
-        <li>Build: Claude Code, Supabase, GitHub, Vercel</li>
-        <li>Strategy &amp; research: Claude, ChatGPT, Cursor, ChatPRD</li>
-        <li>Design prototyping: Google Stitch, Uizard, Lovable</li>
-        <li>Presentations: Gamma</li>
-        <li>Roadmapping: Jira, Notion, Asana</li>
-        <li>Analytics: MoEngage, Databricks</li>
       </div>
     </div>
   </div>
