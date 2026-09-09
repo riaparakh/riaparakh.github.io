@@ -80,6 +80,34 @@
   .nav-links a:hover { color: #EDEDEA !important; }
   @media (max-width: 640px) { .nav-links { display: none; } }
 
+  /* ---------- Left sidebar nav (desktop) ---------- */
+  @media (min-width: 900px) {
+    nav {
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      width: 200px;
+      height: 100vh;
+      border-bottom: none;
+      border-right: 0.5px solid rgba(255,255,255,0.08);
+      background: #17181A !important;
+      backdrop-filter: none;
+      z-index: 10;
+      overflow-y: auto;
+    }
+    nav .wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 40px;
+      height: auto;
+      max-width: none;
+      padding: 40px 28px;
+    }
+    .nav-links { display: flex; flex-direction: column; gap: 20px; }
+    body { padding-left: 200px; }
+  }
+
   /* ---------- Hero — full-bleed, dominant number ---------- */
   .hero {
     padding: 72px 0 0;
@@ -311,6 +339,10 @@
     body { font-size: 17px; }
   }
 
+  @media (min-width: 900px) {
+    section[id] { scroll-margin-top: 24px; }
+  }
+
   /* ---------- Tablet ---------- */
   @media (min-width: 641px) and (max-width: 899px) {
     .stat-grid { grid-template-columns: repeat(2, 1fr); }
@@ -379,8 +411,8 @@
 
 <section id="how-i-help" class="flow">
   <div class="wrap">
-    <div class="eyebrow">Where I come in</div>
-    <h2>Two tracks, not tied to funding stage</h2>
+    <div class="eyebrow">How I can help</div>
+    <h2>Product strategy and AI strategy</h2>
 
     <div class="track-grid">
       <div class="track-card">
@@ -415,7 +447,7 @@
 <section id="how-it-works" class="flow">
   <div class="wrap">
     <div class="eyebrow">How It Works</div>
-    <h2>Most engagements run three to six months, in three phases.</h2>
+    <h2>How an engagement runs</h2>
     <p class="section-lede">The shape stays the same whether the work is finding a first product or fixing a growth problem. What changes is where I spend the time.</p>
 
     <div class="phases">
@@ -452,7 +484,7 @@
 <section id="work" class="flow">
   <div class="wrap">
     <div class="eyebrow">Case studies</div>
-    <h2>Six case studies across four sectors</h2>
+    <h2>Seven case studies across five sectors</h2>
 
     <div class="case-grid">
       <div class="case-card">
@@ -500,6 +532,18 @@
           <dt>Ask</dt><dd>Design a lending journey for a regulated fintech, covering everything from data collection through disbursal and repayment.</dd>
           <dt>Approach</dt><dd>Mapped and designed the full customer journey end-to-end for Aditya Birla Finance.</dd>
           <dt>Result</dt><dd class="case-result">70,000 loans, ₹180 Cr (~$20M), disbursed in the first six months.</dd>
+        </dl>
+      </div>
+
+      <div class="case-card">
+        <div>
+          <div class="case-name">Real estate lead &amp; sales platform</div>
+          <div class="case-meta">Proptech, 0-to-1<br>India · 2018</div>
+        </div>
+        <dl class="case-dl">
+          <dt>Ask</dt><dd>Build a lead and sales management system for a real estate business losing deals to an untracked, manual sales process.</dd>
+          <dt>Approach</dt><dd>Designed and built the platform end-to-end, covering lead capture, qualification, and sales tracking through to close.</dd>
+          <dt>Result</dt><dd class="case-result">The prototype was strong enough to spin off into its own company, which went on to raise $27M in funding.</dd>
         </dl>
       </div>
 
