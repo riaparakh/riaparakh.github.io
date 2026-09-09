@@ -110,6 +110,13 @@
     max-width: 42ch;
     line-height: 1.55;
   }
+  .hero-cred {
+    margin-top: 20px;
+    font-size: 13.5px;
+    color: #8C8D8A !important;
+    letter-spacing: 0.01em;
+  }
+  .hero-cred b { color: #B4B5B1 !important; font-weight: 500; }
   .hero-cta { display: flex; gap: 12px; margin-top: 40px; }
   .btn {
     display: inline-flex;
@@ -151,11 +158,6 @@
     .stat-grid { grid-template-columns: 1fr; gap: 24px; }
   }
 
-  /* ---------- Sectors — full-bleed alternating tint band, breaks the rhythm ---------- */
-  .sectors-band {
-    background: #1F2123 !important;
-    padding: 68px 0;
-  }
   .eyebrow { font-size: 13px; color: #E8A33D !important; margin-bottom: 16px; }
   h2 {
     font-family: 'Fraunces', Georgia, serif;
@@ -165,52 +167,10 @@
     max-width: 18ch;
     line-height: 1.15;
   }
-  .sector-grid {
-    margin-top: 44px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px 28px;
-  }
-  .sector-card h3 { font-size: 14px; font-weight: 500; color: #B4B5B1 !important; }
-  .sector-num {
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: 24px;
-    margin-top: 10px;
-    color: #EDEDEA !important;
-  }
-  .sector-detail { font-size: 13px; color: #8C8D8A !important; margin-top: 5px; }
-  @media (max-width: 560px) { .sector-grid { grid-template-columns: 1fr; gap: 26px; } }
 
-  /* ---------- How I work — narrower measure, generous top padding for breathing room ---------- */
+  /* ---------- Section rhythm ---------- */
   section.flow { padding: 80px 0; }
   .section-lede { margin-top: 16px; color: #B4B5B1 !important; font-size: 15px; max-width: 50ch; }
-
-  .phase {
-    display: flex;
-    gap: 22px;
-    padding: 26px 0;
-  }
-  .phase-index {
-    font-family: 'Fraunces', Georgia, serif;
-    font-style: italic;
-    font-size: 22px;
-    color: #5B8DEF !important;
-    width: 34px;
-    flex-shrink: 0;
-  }
-  .phase-body h3 { font-size: 17px; font-weight: 500; }
-  .phase-body p { margin-top: 7px; font-size: 14.5px; color: #B4B5B1 !important; max-width: 46ch; }
-
-  .callout {
-    margin-top: 36px;
-    padding: 26px 28px;
-    background: #1F2123 !important;
-    border-radius: 4px;
-    font-size: 15px;
-    color: #B4B5B1 !important;
-    line-height: 1.65;
-    border-left: 2px solid #E8A33D;
-  }
 
   /* ---------- How I can help — big serif arrow as the visual anchor ---------- */
   .help-list { margin-top: 40px; }
@@ -235,6 +195,53 @@
     border-top: 0.5px solid rgba(255,255,255,0.08);
   }
   .help-proof strong { color: #B4B5B1 !important; font-weight: 500; }
+
+  /* ---------- Two tracks (Product Strategy / AI Strategy) ---------- */
+  .track-grid { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  @media (max-width: 640px) { .track-grid { grid-template-columns: 1fr; } }
+  .track-card {
+    padding: 30px 28px;
+    background: #1F2123 !important;
+    border-radius: 4px;
+    border-top: 2px solid #5B8DEF;
+  }
+  .track-card.ai { border-top-color: #E8A33D; }
+  .track-card h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 21px; }
+  .track-stage { margin-top: 6px; font-size: 12.5px; color: #5B8DEF !important; }
+  .track-card.ai .track-stage { color: #E8A33D !important; }
+  .track-desc { margin-top: 10px; font-size: 14.5px; color: #B4B5B1 !important; }
+  .track-list { margin-top: 20px; display: grid; gap: 14px; }
+  .track-list li { list-style: none; font-size: 13.5px; color: #B4B5B1 !important; line-height: 1.6; padding-left: 16px; position: relative; }
+  .track-list li::before { content: "–"; position: absolute; left: 0; color: #8C8D8A; }
+  .track-list li b { color: #EDEDEA !important; font-weight: 500; }
+  .stack-line {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 0.5px solid rgba(255,255,255,0.08);
+    font-size: 12.5px;
+    color: #8C8D8A !important;
+    line-height: 1.8;
+  }
+  .stack-line b { color: #B4B5B1 !important; font-weight: 500; }
+  .stack-line-label { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.05em; color: #E8A33D !important; margin-bottom: 8px; }
+
+  /* ---------- Work / case studies ---------- */
+  .case-grid { margin-top: 40px; display: grid; gap: 20px; }
+  .case-card {
+    padding: 28px 30px;
+    background: #1F2123 !important;
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 28px;
+  }
+  @media (max-width: 700px) { .case-card { grid-template-columns: 1fr; gap: 14px; } }
+  .case-name { font-family: 'Fraunces', Georgia, serif; font-size: 18px; font-weight: 500; color: #EDEDEA !important; }
+  .case-meta { margin-top: 6px; font-size: 12.5px; color: #8C8D8A !important; line-height: 1.6; }
+  .case-dl dt { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.04em; color: #5B8DEF !important; margin-top: 14px; }
+  .case-dl dt:first-child { margin-top: 0; }
+  .case-dl dd { margin: 5px 0 0; font-size: 14px; color: #B4B5B1 !important; max-width: 60ch; }
+  .case-dl dd.case-result { color: #EDEDEA !important; }
 
   /* ---------- Career ---------- */
   .role { display: grid; grid-template-columns: 96px 1fr; gap: 20px; padding: 24px 0; }
@@ -268,7 +275,6 @@
     .hero h1 { font-size: clamp(48px, 6vw, 76px); max-width: 15ch; }
     .hero-sub { font-size: 19px; max-width: 48ch; }
     .stat-grid { grid-template-columns: repeat(3, 1fr); gap: 36px 32px; }
-    .sector-grid { grid-template-columns: repeat(4, 1fr); gap: 28px 24px; }
   }
 
   @media (min-width: 1200px) {
@@ -279,7 +285,6 @@
   /* ---------- Tablet ---------- */
   @media (min-width: 641px) and (max-width: 899px) {
     .stat-grid { grid-template-columns: repeat(2, 1fr); }
-    .sector-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
 
@@ -287,14 +292,12 @@
 </head>
 <body>
 
-</div>
-
 <nav>
   <div class="wrap">
     <div class="nav-name">Ria Parakh</div>
     <div class="nav-links">
-      <a href="#how-it-works">How I work</a>
       <a href="#how-i-help">How I can help</a>
+      <a href="#work">Case studies</a>
       <a href="#career">Career</a>
       <a href="#contact">Contact</a>
     </div>
@@ -303,135 +306,158 @@
 
 <header class="hero">
   <div class="wrap">
-    <div class="hero-tag">Product strategy — fractional</div>
-    <h1>14 years. 6 sectors. I build the <em>product</em>, not just the plan.</h1>
-    <p class="hero-sub">Fractional product leadership for founders from pre-seed to Series B — strategy, execution, and AI-native prototypes, built by me directly.</p>
+    <div class="hero-tag">Fractional CPO — product strategy &amp; AI strategy</div>
+    <h1>Fractional CPO for product strategy and <em>AI strategy</em>.</h1>
+    <p class="hero-sub">I work with start-ups and scale-ups on getting to product-market fit, fixing growth that's stalled, and figuring out where AI genuinely belongs in the product and the team. Most engagements end with something built and testable that you can put in front of real users.</p>
+    <p class="hero-cred"><b>14+ years</b> across fintech, crypto, consumer, and healthcare · MSc, UCL · J.P. Morgan, London</p>
     <div class="hero-cta">
       <a href="#contact" class="btn btn-primary">Get in touch</a>
-      <a href="#how-it-works" class="btn btn-ghost">How I work ↓</a>
+      <a href="#work" class="btn btn-ghost">See the work ↓</a>
     </div>
   </div>
 
-  <div class="wrap stat-grid">
+  <div class="wrap" style="margin-top:72px; padding-top:48px; border-top:0.5px solid rgba(255,255,255,0.1);">
+    <div class="eyebrow" style="margin-bottom:0;">Proof</div>
+  </div>
+  <div class="wrap stat-grid" style="margin-top:0; padding-top:20px; border-top:none;">
     <div>
-      <div class="stat-num">$18M</div>
-      <div class="stat-cap">Peak daily trading volume, 30 days after launch — became the platform's top revenue product</div>
+      <div class="stat-num">14+ yrs</div>
+      <div class="stat-cap">Across fintech, crypto, consumer, healthcare, and capital markets</div>
     </div>
     <div>
-      <div class="stat-num">10min → 1min</div>
-      <div class="stat-cap">KYC completion time</div>
+      <div class="stat-num">3.5M → 7M</div>
+      <div class="stat-cap">Users grown on a regulated fintech platform (ZebPay)</div>
     </div>
     <div>
-      <div class="stat-num">100+hrs → 12hrs</div>
-      <div class="stat-cap">8x faster — a founder's manual process, replaced with a build</div>
+      <div class="stat-num">20+ engagements</div>
+      <div class="stat-cap">Across the US, UK, Japan, Australia, Saudi Arabia, Brazil, and India</div>
     </div>
     <div>
-      <div class="stat-num">87% faster</div>
-      <div class="stat-cap">PRD generation, with AI in the loop</div>
+      <div class="stat-num">15 days → 2</div>
+      <div class="stat-cap">PRD generation cycle, rebuilt around AI tooling, for a 12-person product &amp; design org</div>
     </div>
     <div>
       <div class="stat-num">$27M</div>
-      <div class="stat-cap">Raised off a prototype I built</div>
+      <div class="stat-cap">Raised on the strength of a prototype designed and built for the round</div>
     </div>
     <div>
-      <div class="stat-num">70,000 / ₹180 Cr</div>
-      <div class="stat-cap">Loans disbursed in 6 months, on a system I built</div>
+      <div class="stat-num">500K+</div>
+      <div class="stat-cap">Downloads on a consumer app built from a proprietary matching algorithm</div>
     </div>
   </div>
 </header>
 
-<section class="sectors-band">
-  <div class="wrap">
-    <div class="eyebrow">Range</div>
-    <h2>Sectors I've worked across</h2>
-    <div class="sector-grid">
-      <div class="sector-card">
-        <h3>Fintech and capital markets</h3>
-        <div class="sector-num">3.5M → 7M users</div>
-        <div class="sector-detail">Crypto exchange, digital lending, FX risk</div>
-      </div>
-      <div class="sector-card">
-        <h3>Consumer</h3>
-        <div class="sector-num">500K+ downloads</div>
-        <div class="sector-detail">Beauty, fitness, travel, real estate</div>
-      </div>
-      <div class="sector-card">
-        <h3>Healthcare</h3>
-        <div class="sector-num">10,000+ patients/month</div>
-        <div class="sector-detail">Clinic operations, chronic care, research funding</div>
-      </div>
-      <div class="sector-card">
-        <h3>AI and emerging tech</h3>
-        <div class="sector-num">5+ prototypes</div>
-        <div class="sector-detail">Edtech, GenAI evaluation, agent systems</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="how-it-works" class="flow">
-  <div class="wrap">
-    <div class="eyebrow">Process</div>
-    <h2>Most engagements run three to six months</h2>
-    <p class="section-lede">The shape stays the same across three phases. What changes is where the time goes.</p>
-
-    <div class="phase">
-      <div class="phase-index">01</div>
-      <div class="phase-body">
-        <h3>Strategy</h3>
-        <p>Customer research, market research. No recommendations before I understand what's actually happening.</p>
-      </div>
-    </div>
-    <div class="phase">
-      <div class="phase-index">02</div>
-      <div class="phase-body">
-        <h3>Build</h3>
-        <p>I execute myself, or bring in a small team. Someone senior stays close to the work throughout.</p>
-      </div>
-    </div>
-    <div class="phase">
-      <div class="phase-index">03</div>
-      <div class="phase-body">
-        <h3>Handoff</h3>
-        <p>I help define whether a permanent hire is needed, and what that role should look like.</p>
-      </div>
-    </div>
-
-    <div class="callout">
-      Most fractional engagements fail because the person shows up with a generic playbook and stays uninvolved. I do the research myself. I build the product myself. I stay accountable for outcomes, not just recommendations.
-    </div>
-  </div>
-</section>
-
 <section id="how-i-help" class="flow">
   <div class="wrap">
     <div class="eyebrow">Where I come in</div>
-    <h2>Four situations founders bring me into</h2>
+    <h2>Two tracks, not tied to funding stage</h2>
 
-    <div class="help-list">
-      <div class="help-card">
-        <div class="help-stage">Pre-seed</div>
-        <div class="help-arrow">I turn your idea <span>into</span> a real product</div>
-        <p class="help-desc">Most ideas fail from vague scope, not bad execution. I run the customer and market research first, then tell you honestly if the idea needs to change before you spend on building it.</p>
-        <p class="help-proof"><strong>Proof:</strong> Took a one-line brief to a proprietary matching algorithm and 500,000+ downloads. 20+ founders, 6 countries, at Graph++.</p>
+    <div class="track-grid">
+      <div class="track-card">
+        <h3>Product Strategy</h3>
+        <div class="track-stage">Pre-seed through Series B</div>
+        <p class="track-desc">Finding what to build next, and building a plan the team can actually follow.</p>
+        <ul class="track-list">
+          <li><b>Product-market fit &amp; customer research</b> — talking to real customers to see if the idea holds up before you spend on building it</li>
+          <li><b>Roadmap &amp; prioritisation</b> — turning a long list of ideas into a sequence the team can execute</li>
+          <li><b>Growth &amp; retention</b> — finding where users drop off and fixing the journey itself, not just the messaging around it</li>
+          <li><b>New revenue streams</b> — pricing and monetisation models built for the business you actually have</li>
+        </ul>
       </div>
-      <div class="help-card">
-        <div class="help-stage">Series A and B</div>
-        <div class="help-arrow">I find where your growth <span>is stuck</span>, and fix it</div>
-        <p class="help-desc">Growth rarely stalls for one reason. I dig into the actual funnel, pricing, or product gap causing it, then either fix it myself or build the small team that does.</p>
-        <p class="help-proof"><strong>Proof:</strong> Took a regulated platform from 3.5M to 7M users. Launched a product that added $2M in revenue within 30 days. Grew trading volume 120%.</p>
+      <div class="track-card ai">
+        <h3>AI Strategy</h3>
+        <div class="track-stage">Pre-seed through Series B</div>
+        <p class="track-desc">Making AI useful inside the actual product and the actual workflow.</p>
+        <ul class="track-list">
+          <li><b>Workflow optimisation</b> — rebuilding how a team works with AI day to day (one team went from 15 days to under 2 for PRD writing)</li>
+          <li><b>Rapid prototyping</b> — taking a spec to a deployed, working build myself, so you can test with real users instead of a slide</li>
+          <li><b>AI-driven products</b> — deciding where AI genuinely improves the product experience, and where it's better left out</li>
+        </ul>
+        <div class="stack-line">
+          <div class="stack-line-label">How I build</div>
+          <b>Build:</b> Claude Code, Cursor, Codex, Supabase, GitHub, Vercel &nbsp;·&nbsp; <b>Strategy &amp; research:</b> Claude, ChatGPT, ChatPRD &nbsp;·&nbsp; <b>Prototyping:</b> Google Stitch, Uizard, Lovable &nbsp;·&nbsp; <b>Presentations:</b> Gamma
+        </div>
       </div>
-      <div class="help-card">
-        <div class="help-stage">Operations</div>
-        <div class="help-arrow">I turn your manual work <span>into</span> AI systems</div>
-        <p class="help-desc">I redesign the process before I automate it, so the AI system replaces the right work, not just the visible symptom.</p>
-        <p class="help-proof"><strong>Proof:</strong> Built a 6-agent research system that replaced 15+ hours of manual synthesis, and changed a founder's product direction.</p>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="flow">
+  <div class="wrap">
+    <div class="eyebrow">Case studies</div>
+    <h2>Six case studies across four sectors</h2>
+
+    <div class="case-grid">
+      <div class="case-card">
+        <div>
+          <div class="case-name">ZebPay</div>
+          <div class="case-meta">Fintech scale-up<br>India · 2021–2026</div>
+        </div>
+        <dl class="case-dl">
+          <dt>Ask</dt><dd>Grow a regulated crypto platform past its early adopters without breaking trust or compliance.</dd>
+          <dt>Approach</dt><dd>Rebuilt onboarding and the core trading journey, found KYC as the platform's biggest silent drop-off point and fixed it, then launched three new revenue lines.</dd>
+          <dt>Result</dt><dd class="case-result">User base grew 3.5M → ~7M; KYC completion time cut from 10 minutes to under 1; QuickTrade hit $18M in peak daily volume within 30 days of launch.</dd>
+        </dl>
       </div>
-      <div class="help-card">
-        <div class="help-stage">AI product strategy</div>
-        <div class="help-arrow">I turn "we need AI" <span>into</span> a working prototype</div>
-        <p class="help-desc">I decide what the AI should actually do for the user, where it fits in the product, and whether it changes how you make money — then build a real prototype, not a slide deck.</p>
-        <p class="help-proof"><strong>Proof:</strong> Shipped 5+ AI prototypes across health, travel, education, and research funding — each built and validated with real users.</p>
+
+      <div class="case-card">
+        <div>
+          <div class="case-name">Research funding marketplace</div>
+          <div class="case-meta">Healthcare, 0-to-1<br>US · 2026</div>
+        </div>
+        <dl class="case-dl">
+          <dt>Ask</dt><dd>Test whether a marketplace connecting donors, foundations, and research institutions was actually a business.</dd>
+          <dt>Approach</dt><dd>Defined the monetisation model and MVP scope, wrote the functional specs, then personally built and deployed the working prototype.</dd>
+          <dt>Result</dt><dd class="case-result">A real product to test with users and investors, built before any engineering resource was committed.</dd>
+        </dl>
+      </div>
+
+      <div class="case-card">
+        <div>
+          <div class="case-name">AI learning platform</div>
+          <div class="case-meta">EdTech, AI-native<br>EU · 2026</div>
+        </div>
+        <dl class="case-dl">
+          <dt>Ask</dt><dd>Validate the target market and core product hypothesis for an AI-native learning platform.</dd>
+          <dt>Approach</dt><dd>Ran structured customer research and market validation, using a 6-agent AI system built to run interview synthesis with a built-in check against unsupported claims.</dd>
+          <dt>Result</dt><dd class="case-result">Found the target age group and the founder's core hypothesis were both wrong, and redirected the strategy before further engineering spend — avoiding a costly build in the wrong direction.</dd>
+        </dl>
+      </div>
+
+      <div class="case-card">
+        <div>
+          <div class="case-name">Digital lending platform</div>
+          <div class="case-meta">Fintech, consulting engagement<br>India · 2015–2018</div>
+        </div>
+        <dl class="case-dl">
+          <dt>Ask</dt><dd>Design a lending journey for a regulated fintech, covering everything from data collection through disbursal and repayment.</dd>
+          <dt>Approach</dt><dd>Mapped and designed the full customer journey end-to-end for Aditya Birla Finance.</dd>
+          <dt>Result</dt><dd class="case-result">70,000 loans, ₹180 Cr (~$20M), disbursed in the first six months.</dd>
+        </dl>
+      </div>
+
+      <div class="case-card">
+        <div>
+          <div class="case-name">Clinic patient management platform</div>
+          <div class="case-meta">Healthcare, consulting engagement<br>India · 2015–2018</div>
+        </div>
+        <dl class="case-dl">
+          <dt>Ask</dt><dd>Automate scheduling, prescriptions, and billing across a multi-branch clinic without disrupting daily patient flow.</dd>
+          <dt>Approach</dt><dd>Designed and delivered a patient management platform covering scheduling, prescriptions, and billing across all branches.</dd>
+          <dt>Result</dt><dd class="case-result">Serving 10,000+ patients a month.</dd>
+        </dl>
+      </div>
+
+      <div class="case-card">
+        <div>
+          <div class="case-name">Kult Beauty</div>
+          <div class="case-meta">Consumer D2C, 0-to-1<br>India · 2018–2021</div>
+        </div>
+        <dl class="case-dl">
+          <dt>Ask</dt><dd>Build trust and personalisation into a beauty app entering a crowded, low-differentiation market.</dd>
+          <dt>Approach</dt><dd>Ran customer, behavioural, and competitive research, then designed a proprietary skin-type matching algorithm and skin-tone visualisation engine.</dd>
+          <dt>Result</dt><dd class="case-result">500,000+ downloads.</dd>
+        </dl>
       </div>
     </div>
   </div>
@@ -466,7 +492,7 @@
     <div class="role">
       <div class="role-years">2015 – 2018</div>
       <div>
-        <div class="role-title">Founder <span class="role-org">— Graph++</span></div>
+        <div class="role-title">Founder <span class="role-org">— Independent Consulting Practice</span></div>
         <p class="role-desc">Independent product consultancy. 20+ engagements, 6 countries, taking founders from unclear idea to a plan they could build.</p>
       </div>
     </div>
