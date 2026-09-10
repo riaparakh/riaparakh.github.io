@@ -90,7 +90,52 @@
   }
   .nav-links a:hover { color: #EDEDEA !important; }
   .nav-links a.active { color: #EDEDEA !important; border-bottom-color: #5B8DEF; }
-  @media (max-width: 640px) { .nav-links { display: none; } }
+
+  /* ---------- Mobile hamburger toggle ---------- */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 20px;
+    height: 1.5px;
+    background: #EDEDEA;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  @media (max-width: 640px) {
+    .nav-toggle { display: flex; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 58px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: #111214;
+      border-bottom: 0.5px solid rgba(255,255,255,0.1);
+      box-shadow: 0 16px 28px rgba(0,0,0,0.32);
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a {
+      padding: 16px 24px;
+      border-bottom: 0.5px solid rgba(255,255,255,0.06);
+    }
+    .nav-links a.active { border-bottom-color: rgba(255,255,255,0.06); }
+  }
 
   /* ---------- Left sidebar nav (desktop) ---------- */
   @media (min-width: 900px) {
@@ -444,7 +489,10 @@
 <nav>
   <div class="wrap">
     <a class="nav-name" href="#top">Ria Parakh</a>
-    <div class="nav-links">
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
       <a href="#approach">Approach</a>
       <a href="#work">Work</a>
       <a href="#about">About</a>
@@ -783,6 +831,33 @@
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
     history.pushState(null, '', location.pathname + location.search);
+    closeMobileNav();
+  });
+})();
+
+function closeMobileNav() {
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  if (!navToggle || !navLinks) return;
+  navLinks.classList.remove('open');
+  navToggle.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+}
+
+(function () {
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  if (!navToggle || !navLinks) return;
+
+  navToggle.addEventListener('click', function () {
+    var open = !navLinks.classList.contains('open');
+    navLinks.classList.toggle('open', open);
+    navToggle.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+  });
+
+  navLinks.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', closeMobileNav);
   });
 })();
 
