@@ -160,6 +160,7 @@
     cursor: pointer;
     list-style: none;
     padding: 20px 24px;
+    min-height: 92px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -252,6 +253,62 @@
   section.flow { padding: 80px 0; }
   .section-lede { margin-top: 16px; color: #B4B5B1 !important; font-size: 15px; max-width: 50ch; }
 
+  /* ---------- Question grid — 16 first-person questions, equal weight ---------- */
+  .qg-section { padding-top: 56px; }
+  .qg-grid {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    border-top: 0.5px solid rgba(255,255,255,0.08);
+  }
+  .qg-cell {
+    display: none;
+    order: 999;
+    padding: 18px 2px;
+    font-size: 14.5px;
+    line-height: 1.45;
+    color: #B4B5B1 !important;
+    border-bottom: 0.5px solid rgba(255,255,255,0.08);
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+  .qg-cell[data-default] { display: flex; align-items: center; order: var(--mob); }
+  .qg-grid.expanded .qg-cell { display: flex; align-items: center; order: var(--nat); }
+  .qg-cell:hover { background: rgba(255,255,255,0.03); color: #EDEDEA !important; }
+  .qg-cell:focus-visible { outline: 2px solid #5B8DEF; outline-offset: -3px; color: #EDEDEA !important; }
+  .qg-toggle {
+    display: inline-block;
+    margin-top: 24px;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 13.5px;
+    color: #8C8D8A !important;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .qg-toggle:hover { color: #EDEDEA !important; }
+  .qg-toggle:focus-visible { outline: 2px solid #5B8DEF; outline-offset: 3px; }
+
+  @media (min-width: 640px) {
+    .qg-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-left: 0.5px solid rgba(255,255,255,0.08);
+    }
+    .qg-cell {
+      display: flex !important;
+      align-items: center;
+      order: var(--nat) !important;
+      padding: 20px 22px;
+      border-right: 0.5px solid rgba(255,255,255,0.08);
+    }
+    .qg-toggle { display: none; }
+  }
+  @media (min-width: 1024px) {
+    .qg-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
   /* ---------- How I can help — big serif arrow as the visual anchor ---------- */
   .help-list { margin-top: 40px; }
   .help-card { padding: 34px 0; border-top: 0.5px solid rgba(255,255,255,0.08); }
@@ -328,7 +385,7 @@
     color: #5B8DEF !important;
   }
   .phase h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 19px; }
-  .phase p { margin-top: 8px; font-size: 14.5px; color: #B4B5B1 !important; max-width: 54ch; }
+  .phase p { margin-top: 8px; font-size: 14.5px; color: #B4B5B1 !important; max-width: none; }
   @media (max-width: 560px) { .phase { grid-template-columns: 1fr; gap: 8px; } }
 
   .objection-block {
@@ -364,7 +421,7 @@
   .role-years { font-size: 13px; color: #8C8D8A !important; padding-top: 2px; }
   .role-title { font-size: 16px; font-weight: 500; }
   .role-org { color: #8C8D8A !important; font-weight: 400; }
-  .role-desc { margin-top: 7px; font-size: 14.5px; color: #B4B5B1 !important; max-width: 52ch; }
+  .role-desc { margin-top: 7px; font-size: 14.5px; color: #B4B5B1 !important; max-width: none; }
   @media (max-width: 560px) { .role { grid-template-columns: 1fr; gap: 4px; } }
 
   .subgroup { margin-top: 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -463,39 +520,68 @@
       <a href="#work" class="btn btn-ghost">See the work ↓</a>
     </div>
   </div>
-
-  <div class="wrap" style="margin-top:72px; padding-top:48px; border-top:0.5px solid rgba(255,255,255,0.1);">
-    <div class="eyebrow" style="margin-bottom:0;">Proof</div>
-  </div>
-  <div class="wrap stat-grid" style="margin-top:0; padding-top:20px; border-top:none;">
-    <div>
-      <div class="stat-num">14+ yrs</div>
-      <div class="stat-cap">Across fintech, crypto, consumer, healthcare, and capital markets</div>
-    </div>
-    <div>
-      <div class="stat-num">3.5M → 7M</div>
-      <div class="stat-cap">Users grown on a regulated fintech platform (ZebPay)</div>
-    </div>
-    <div>
-      <div class="stat-num">20+ engagements</div>
-      <div class="stat-cap">Across the US, UK, Japan, Australia, Saudi Arabia, UAE, Hungary, Brazil, and India</div>
-    </div>
-    <div>
-      <div class="stat-num">15 days → 2</div>
-      <div class="stat-cap">PRD generation cycle, rebuilt around AI tooling, for a 12-person product &amp; design org</div>
-    </div>
-    <div>
-      <div class="stat-num">$27M</div>
-      <div class="stat-cap">Raised on a prototype built for the round</div>
-    </div>
-    <div>
-      <div class="stat-num">500K+</div>
-      <div class="stat-cap">Downloads on a consumer app built from a proprietary matching algorithm</div>
-    </div>
-  </div>
 </header>
 
-<section class="flow" style="padding-top:0;">
+<section class="flow qg-section">
+  <div class="wrap">
+    <h2 class="qg-heading">Founders usually arrive with one of these.</h2>
+
+    <div class="qg-grid" id="qgGrid">
+      <a class="qg-cell" data-default href="#how-it-works" style="--nat:1; --mob:1;">I have an idea but I don't know if it's actually a business.</a>
+      <a class="qg-cell" href="#how-it-works" style="--nat:2;">I can't describe who this is for in one sentence.</a>
+      <a class="qg-cell" data-default href="#how-it-works" style="--nat:3; --mob:2;">People tell me they love it and then don't use it.</a>
+      <a class="qg-cell" href="#how-it-works" style="--nat:4;">I've done customer interviews and come away with nothing I could act on.</a>
+      <a class="qg-cell" href="#how-it-works" style="--nat:5;">We're building something and I'm not confident we understand the market.</a>
+      <a class="qg-cell" data-default href="#how-it-works" style="--nat:6; --mob:3;">Users sign up but don't come back, and I don't know why.</a>
+      <a class="qg-cell" href="#how-it-works" style="--nat:7;">Our roadmap is a list of everything anyone has ever asked for.</a>
+      <a class="qg-cell" data-default href="#how-it-works" style="--nat:8; --mob:4;">We have users and no revenue and I'm running out of runway to figure that out.</a>
+      <a class="qg-cell" href="#how-i-build" style="--nat:9;">I know what I want to build. I need someone who can actually get it built.</a>
+      <a class="qg-cell" data-default href="#how-i-build" style="--nat:10; --mob:5;">I need something real to show users or investors, not just a deck.</a>
+      <a class="qg-cell" data-default href="#how-i-build" style="--nat:11; --mob:6;">Everyone says we need AI in the product and I don't know what that should look like.</a>
+      <a class="qg-cell" href="#how-i-build" style="--nat:12;">Writing specs and PRDs is eating my week.</a>
+      <a class="qg-cell" data-default href="#how-i-build" style="--nat:13; --mob:7;">My small team is stretched thin and I want to know where AI can actually take work off our plate.</a>
+      <a class="qg-cell" data-default href="#contact" style="--nat:14; --mob:8;">I'm the founder, the CEO, and the head of product, and I'm doing the third one badly.</a>
+      <a class="qg-cell" href="#case-zebpay" style="--nat:15;">I need my product story to hold up in front of the board or investors.</a>
+      <a class="qg-cell" href="#case-zebpay" style="--nat:16;">We're regulated and it's being used as a reason not to change anything.</a>
+    </div>
+
+    <button type="button" class="qg-toggle" id="qgToggle" aria-expanded="false" aria-controls="qgGrid">Show more</button>
+  </div>
+</section>
+
+<section id="proof" class="flow">
+  <div class="wrap">
+    <div class="eyebrow">Proof</div>
+    <div class="stat-grid" style="margin-top:0; padding-top:0; border-top:none;">
+      <div>
+        <div class="stat-num">14+ yrs</div>
+        <div class="stat-cap">Across fintech, crypto, consumer, healthcare, and capital markets</div>
+      </div>
+      <div>
+        <div class="stat-num">3.5M → 7M</div>
+        <div class="stat-cap">Users grown on a regulated fintech platform (ZebPay)</div>
+      </div>
+      <div>
+        <div class="stat-num">20+ engagements</div>
+        <div class="stat-cap">Across the US, UK, Japan, Australia, Saudi Arabia, UAE, Hungary, Brazil, and India</div>
+      </div>
+      <div>
+        <div class="stat-num">15 days → 2</div>
+        <div class="stat-cap">PRD generation cycle, rebuilt around AI tooling, for a 12-person product &amp; design org</div>
+      </div>
+      <div>
+        <div class="stat-num">$27M</div>
+        <div class="stat-cap">Raised on a prototype built for the round</div>
+      </div>
+      <div>
+        <div class="stat-num">500K+</div>
+        <div class="stat-cap">Downloads on a consumer app built from a proprietary matching algorithm</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how-i-build" class="flow">
   <div class="wrap">
     <div class="stack-line stack-line-top">
       <div class="stack-line-label">How I build</div>
@@ -549,7 +635,7 @@
     <p class="section-lede">The short version of each: what was asked, what I did, and what happened.</p>
 
     <div class="case-grid">
-      <div class="case-card">
+      <div class="case-card" id="case-zebpay">
         <div>
           <div class="case-name">ZebPay</div>
           <div class="case-meta">Fintech scale-up<br>India · 2021–2026</div>
@@ -716,6 +802,48 @@
 <footer>
   <div class="wrap">Ria Parakh: Product Strategy</div>
 </footer>
+
+<script>
+(function () {
+  var grid = document.getElementById('qgGrid');
+  var toggle = document.getElementById('qgToggle');
+  if (!grid || !toggle) return;
+
+  toggle.addEventListener('click', function () {
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var expanding = !grid.classList.contains('expanded');
+
+    if (reduceMotion) {
+      grid.classList.toggle('expanded', expanding);
+      toggle.setAttribute('aria-expanded', String(expanding));
+      toggle.textContent = expanding ? 'Show fewer' : 'Show more';
+      return;
+    }
+
+    var startHeight = grid.getBoundingClientRect().height;
+    grid.style.overflow = 'hidden';
+    grid.style.height = startHeight + 'px';
+
+    grid.classList.toggle('expanded', expanding);
+    var targetHeight = grid.scrollHeight;
+
+    requestAnimationFrame(function () {
+      grid.style.transition = 'height 0.3s ease';
+      grid.style.height = targetHeight + 'px';
+    });
+
+    grid.addEventListener('transitionend', function onEnd() {
+      grid.style.transition = '';
+      grid.style.height = '';
+      grid.style.overflow = '';
+      grid.removeEventListener('transitionend', onEnd);
+    }, { once: true });
+
+    toggle.setAttribute('aria-expanded', String(expanding));
+    toggle.textContent = expanding ? 'Show fewer' : 'Show more';
+  });
+})();
+</script>
 
 </body>
 </html>
